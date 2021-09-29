@@ -1,0 +1,258 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    background-color: black;
+}
+
+header {
+    background: transparent;
+}
+
+.move {
+    background-color: rgba(255, 255, 255, 0.61);
+    transition: 3s;
+}
+.move .logo{
+    color: black;
+}
+.move .navbar a{
+    color: black;
+}
+.move .navbar a:hover{
+    color: white;
+    background-color: black;
+    border-radius: 20px;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo {
+    flex: 1;
+    margin: 5px;
+    color: aliceblue;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.navbar {
+    display: flex;
+    list-style: none;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    margin: 10px;
+}
+
+.navbar a:hover {
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+    border-radius: 20px;
+}
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button {
+    margin-top: 15px;
+--border-width: 5px;
+    cursor: pointer;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  color: rgb(196, 56, 56);
+  background: rgb(0, 0, 0);
+  border-radius: var(--border-width);
+}
+
+  button::after {
+    position: absolute;
+    content: "";
+    top: calc(-1 * var(--border-width));
+    left: calc(-1 * var(--border-width));
+    z-index: -1;
+    width: calc(100% + var(--border-width) * 2);
+    height: calc(100% + var(--border-width) * 2);
+    background: linear-gradient(
+      60deg,
+      hsl(224, 85%, 66%),
+      hsl(269, 85%, 66%),
+      hsl(314, 85%, 66%),
+      hsl(359, 85%, 66%),
+      hsl(44, 85%, 66%),
+      hsl(89, 85%, 66%),
+      hsl(134, 85%, 66%),
+      hsl(179, 85%, 66%)
+    );
+    background-size: 300% 300%;
+    background-position: 0 50%;
+    border-radius: calc(2 * var(--border-width));
+    animation: moveGradient 4s alternate infinite;
+  }
+
+@keyframes moveGradient {
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+
+
+.image img{
+    width: 100%;
+    height: 580px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.about {
+    display: flex;
+    width: 90%;
+    margin: auto;
+    margin-top: 50px;
+}
+
+.about .info, .about .minfo {
+    color: aliceblue;
+}
+.pic img {
+    width: 80%;
+    height: 70vh;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px #8f201d;
+}
+
+.about .info, .about .minfo, .about .pic{
+    flex: 1;
+}
+
+.info img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 30px 30px 0px 0px;
+}
+
+.info h3 {
+    color: #8f201d;
+}
+
+.about .minfo {
+    margin-right: 100px;
+}
+
+.minfo h1 {
+    color: #8f201d;
+}
+
+.minfo p {
+    margin-top: 25px;
+    font-family: "Raleway", sans-serif;
+    font-size: 15px;
+    letter-spacing: 2px;
+}
+
+.gallery h1 {
+    color: aliceblue;
+}
+
+.img-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 30px 0px 0px 30px;
+}
+
+.img-container img {
+    width: 300px;
+    height: 300px;
+    margin: 5px;
+}
+
+.img-container img:hover {
+    box-shadow: 2px 2px 2px 2px #8f201d;
+    transition: 0.8s;
+}
+
+footer {
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.171);
+    justify-content: center;
+    align-items: center;
+}
+
+footer .accounts, footer .mails {
+    justify-content: center;
+
+}
+
+footer img {
+    width: 60px;
+    height: 65px;
+}
+
+@media screen and (max-width: 916px) {
+    .img-container img {
+        width: 200px;
+        height: 200px;
+        margin: 5px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .logo h1 {
+        font-size: 20px;
+    }
+    .navbar a {
+        display: flex;
+        justify-content: center;
+        font-size: 20px;
+        margin: 5px;
+    }
+    .about {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .about .pic img {
+        height: 60vh;
+        margin-top: 50px;
+        margin-left: 40px;
+    }
+    .gallery h1 {
+        margin-top: 50px;
+    }
+    .img-container img {
+        width: 100px;
+        height: 100px;
+        margin: 5px;
+    }
+    .minfo h1, .minfo p{
+        margin-left: 40px;
+    }
+}
