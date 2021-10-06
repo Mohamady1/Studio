@@ -1,6 +1,8 @@
 //global varaibles
 const header = document.querySelector('.header');
-const button = document.querySelector('button');
+let image = document.getElementById('myImage');
+let images = 
+    ['./website/images/header.jpg', './website/images/header1.jpg', './website/images/header2.jpg', './website/images/header3.jpg'];
 
 //make color for header change 
 window.onscroll = () => {
@@ -12,30 +14,12 @@ window.onscroll = () => {
     }
 }
 
-//change button text
-function change () {
-button.textContent = 'Next Photo';
-}
+//change header image
+setInterval(pics, 5000);
 
-// on click button change header photo
-button.onclick = function changeImage() {
-  var image = document.getElementById('myImage');
-  if (image.src.match("./website/images/header.jpg")) {
-    change();
-    image.src = "./website/images/header1.jpg";
-  }
-  else if (image.src.match("./website/images/header1.jpg")){
-    change();
-    image.src = "./website/images/header2.jpg";
-  }
-  else if (image.src.match("./website/images/header3.jpg")) {
-    change();
-    image.src = "./website/images/header.jpg";
-  }
-  else {
-    change();
-    image.src = "./website/images/header3.jpg"
-  }
+function pics () {
+  let random = Math.floor(Math.random() * 4)
+  image.src = images[random];
 }
 
 //smooth scrolling
