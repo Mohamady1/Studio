@@ -18,7 +18,7 @@ window.onscroll = () => {
 setInterval(pics, 5000);
 
 function pics () {
-  let random = Math.floor(Math.random() * 5)
+  let random = Math.floor(Math.random() * 4)
   image.src = images[random];
 }
 
